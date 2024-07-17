@@ -1,9 +1,9 @@
 server {
-	server_name ${DOMAIN_NAME};
+	server_name $DOMAIN_NAME;
 	listen 443 ssl;
 
-	ssl_certificate     /etc/nginx/ssl/omansour.crt;
-	ssl_certificate_key /etc/nginx/ssl/omansour.key;
+	ssl_certificate     $SSL_CRT;
+	ssl_certificate_key $SSL_KEY;
 	ssl_protocols       TLSv1.3;
 
 	root /var/www/html;
@@ -18,4 +18,3 @@ server {
 		fastcgi_pass wordpress:9000;
 	}
 }
-

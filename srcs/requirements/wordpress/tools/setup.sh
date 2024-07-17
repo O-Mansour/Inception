@@ -21,10 +21,10 @@ wp user create $WP_USER $WP_USER_EMAIL \
                --user_pass=$WP_USER_PWD \
                --allow-root
 
-wp theme install astra --activate --allow-root
+wp theme install generatepress --activate --allow-root
 
 mkdir /run/php
 
-sed -i 's/listen = \/run\/php\/php7.4-fpm.sock/listen = 9000/g' /etc/php/7.4/fpm/pool.d/www.conf
+sed -i 's|listen = /run/php/php7.4-fpm.sock|listen = 9000|g' /etc/php/7.4/fpm/pool.d/www.conf
 
 exec /usr/sbin/php-fpm7.4 -F
