@@ -8,6 +8,6 @@ clean :
 
 fclean : clean
 	@docker system prune -af
-	@sudo rm -fr /home/omansour/data/*
+	@sudo rm -fr /home/omansour/data
 
 re : fclean all
