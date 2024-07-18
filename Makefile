@@ -3,6 +3,12 @@ all :
 	@mkdir -p /home/omansour/data/wordpress
 	@docker-compose -f srcs/docker-compose.yml up --build -d
 
+stop :
+	@docker-compose -f srcs/docker-compose.yml stop
+
+start :
+	@docker-compose -f srcs/docker-compose.yml start
+
 clean :
 	@docker-compose -f srcs/docker-compose.yml down -v
 
